@@ -15,7 +15,7 @@
 有人说用hash表，是可以，但是hash表有两个问题：<br>
 1.hash冲突。hash函数不好设计，容易产生冲突，需要解决hash冲突<br>
 2.hash表大小不好确定。hash表底层还是数组实现的，数组的大小不好确定，涉及到扩容的问题<br>
-如果用Radix Tree就很容易解决上面两个问题，看下图：
+如果用Radix Tree就很容易解决上面两个问题，看下图：<br>
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed3145495dfd4f7aa4434a0ec8bab5d2~tplv-k3u1fbpfcp-watermark.image)<br>
 上图就是n=2的基数树。是否似曾相识？没错，字典树(Trie Tree)就是n=26的基数树。或者说基数树是字典树的一个扩展。<br>
 当key的长度很大，那这棵树岂不是很高？比如key=01110001010001010101101。为了减少树的高度，一般用多个比特位作为一个节点，但多比特位会使槽位变多，增大节点的体积，一般用2-4个比特作为一个节点。如图：<br>
