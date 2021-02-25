@@ -12,7 +12,7 @@ func (rt *RadixTree) insertToNode(node *radix_node, str string) {
 	if str==""{
 		return
 	}
-	if isRootNode(node) {
+	if node.isRootNode() {
 		rt.insertToChild(node, str)
 	}
 	// 当前节点一定与str有公共前缀

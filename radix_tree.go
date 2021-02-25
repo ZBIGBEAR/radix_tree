@@ -25,30 +25,30 @@ func NewRadixTree() *RadixTree {
 }
 
 // 判断是不是根节点
-func isRootNode(node *radix_node) bool {
-	return node != nil && node.Val == RootNodeVal
+func (rn *radix_node)isRootNode() bool {
+	return rn != nil && rn.Val == RootNodeVal
 }
 
 // 比较两个radix_tree是否相等
-func compare(root1, root2 *radix_node) bool {
-	if root1 == nil {
-		return root2 == nil
+func (rn *radix_node) compare(node *radix_node) bool {
+	if rn == nil {
+		return node == nil
 	}
-	if root2 == nil {
-		return root1 == nil
+	if node == nil {
+		return rn == nil
 	}
-	if root1.Val != root2.Val {
+	if rn.Val != node.Val {
 		return false
 	}
-	if len(root1.Childs) != len(root2.Childs) {
+	if len(rn.Childs) != len(node.Childs) {
 		return false
 	}
-	for i:=range root1.Childs {
+	for i:=range rn.Childs {
 		find := false
-		for j:=range root2.Childs {
-			if root2.Childs[j].Val == root1.Childs[i].Val {
+		for j:=range node.Childs {
+			if rn.Childs[j].Val == node.Childs[i].Val {
 				find = true
-				if !compare(root1.Childs[i], root2.Childs[j]){
+				if !rn.Childs[i].compare(node.Childs[j]){
 					return false
 				}
 			}
@@ -72,4 +72,19 @@ func (rt *RadixTree) String() (string, error) {
 		return "", err
 	}
 	return out.String(), nil
+}
+
+// 深度拷贝
+func (rt *radix_node) DeepCopy() *radix_node {
+	if rt == nil {
+		return nil
+	}
+	newRoot := &radix_node{
+		Val:    rt.Val,
+		Childs: nil,
+	}
+	for i:=range rt.Childs{
+		newRoot.Childs = append(newRoot.Childs, rt.Childs[i].DeepCopy())
+	}
+	return newRoot
 }

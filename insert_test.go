@@ -23,7 +23,7 @@ func TestInsert(t *testing.T) {
 			},
 		},
 	}
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err := rt.String()
 	assert.Equal(t, nil, err)
@@ -50,7 +50,7 @@ func TestInsert(t *testing.T) {
 		Val:    word2,
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -81,7 +81,7 @@ func TestInsert(t *testing.T) {
 		Val:    word3,
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -116,7 +116,7 @@ func TestInsert(t *testing.T) {
 		Val:    "er",
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -156,7 +156,7 @@ func TestInsert(t *testing.T) {
 		Val:    "ly",
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -202,7 +202,7 @@ func TestInsert(t *testing.T) {
 		Val:    "er",
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -257,7 +257,7 @@ func TestInsert(t *testing.T) {
 		Val:    "ly",
 		Childs: nil,
 	})
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -327,7 +327,7 @@ func TestInsert(t *testing.T) {
 			Childs: nil,
 		},
 	}
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
@@ -414,7 +414,7 @@ func TestInsert(t *testing.T) {
 			Childs: nil,
 		},
 	}
-	assert.Equal(t, true, compare(root, rt.Root))
+	assert.Equal(t, true, root.compare(rt.Root))
 	// 打印结果
 	resultStr, err = rt.String()
 	assert.Equal(t, nil, err)
